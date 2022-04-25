@@ -133,7 +133,20 @@ a {
 	}
 }
 
-.heading-anchor {color: $gray-9}
+.heading-anchor {
+    color: $gray-9;
+    &::after {
+        content: "§";
+        color: $body-bg;
+        transition: color 0.2s ease;
+    }
+    &:hover {
+        border-bottom: none;
+        &::after {
+            color: $gray-3;
+        }
+    }
+}
 
 .content {
 	padding-bottom: 2rem;
